@@ -1,5 +1,7 @@
 const { app, BrowserWindow } = require('electron')
 
+const mysql = require('mysql2/promise')
+
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 800,
@@ -7,6 +9,15 @@ const createWindow = () => {
   })
 
   win.loadFile('pages/index.html')
+}
+
+function conexaoComBanco(){
+    return mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'root',
+        database: 'electron_db'
+    })
 }
 
 app.whenReady().then(() => {
