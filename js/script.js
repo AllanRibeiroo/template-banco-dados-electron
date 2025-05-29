@@ -8,5 +8,7 @@ formulario.addEventListener("submit", function(event) {
     var campoNome = document.getElementById("nome").value
     var campoEmail = document.getElementById("email").value
 
+    
+
     console.log(campoNome,campoEmail)
 })
